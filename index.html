@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather WireFrame</title>
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/0c6b87e885.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-12 themed-grid-col">
+              <div class="pb-3">
+                <form id="search-form">
+                  <input
+                    class="search col-md-7"
+                    type="search"
+                    placeholder="Search city"
+                    id="search-bar-input"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-outline-light btn-sm"
+                    id="search-city-btn"
+                  >
+                    Search
+                  </button>
+                  <div
+                    class="btn-group btn-group-toggle"
+                    data-toggle="buttons"
+                    role="group"
+                    aria-label="Basic example"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm"
+                      aria-pressed="false"
+                      autocomplete="off"
+                      id="fahrenheit"
+                    >
+                      ºF
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm"
+                      aria-pressed="false"
+                      autocomplete="off"
+                      id="celsius"
+                    >
+                      ºC
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-sm"
+                    id="find-my-location"
+                  >
+                    Current
+                  </button>
+                </form>
+                <hr />
+              </div>
+              <div class="title">
+                <h1 id="location">Los Angeles</h1>
+                <h5 id="date">Monday Sept 14, 2020</h5>
+                <h5 id="time">22:42</h5>
+              </div>
+              <div class="row">
+                <div class="col current-weather">
+                  <h3>Clear</h3>
+                  <h2>☀️</h2>
+                  <h4 id="currentTemp">75º</h4>
+                </div>
+
+                <div class="col themed-grid-col" style="">
+                  <ul class="extra-info">
+                    <div class="row">
+                      <li class="col">Wind 💨</li>
+                      <li class="col-11">Humidity 💦</li>
+                      <li class="col">UV Index ✨</li>
+                    </div>
+                  </ul>
+                </div>
+                <div class="col themed-grid-col" style="">
+                  <ul class="extra-info">
+                    <li class="col">5 mph</li>
+                    <li class="col">41%</li>
+                    <li class="col">High</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row fdforcast">
+              <div class="col-md-12 themed-grid-col">
+                <!--five day forecast-->
+                <ul class="five-day-forecast">
+                  <li class="days-of-the-week">
+                    <h3>Mon</h3>
+                    <h4>🌧</h4>
+                    <p>65º</p>
+                  </li>
+                  <li class="days-of-the-week">
+                    <h3>Tue</h3>
+                    <h4>☀️</h4>
+                    <p>80º</p>
+                  </li>
+                  <li class="days-of-the-week">
+                    <h3>Wed</h3>
+                    <h4>☀️</h4>
+                    <p>85º</p>
+                  </li>
+                  <li class="days-of-the-week">
+                    <h3>Thu</h3>
+                    <h4>☁️</h4>
+                    <p>75º</p>
+                  </li>
+                  <li class="days-of-the-week">
+                    <h3>Fri</h3>
+                    <h4>🌤</h4>
+                    <p>68º</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

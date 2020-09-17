@@ -1,0 +1,121 @@
+.container {
+  display: block;
+}
+
+.card {
+  margin: 50px auto 20px;
+  background-image: linear-gradient(
+    to top,
+    #22e1ff 0%,
+    #1d8fe1 48%,
+    #625eb1 100%
+  );
+
+  color: white;
+}
+.pb-3 {
+  padding-top: 1rem;
+  padding-left: 20px;
+}
+button {
+  border: none;
+  color: rgb(203, 234, 237);
+}
+.search {
+  border: solid 1px rgba(100, 148, 202, 0.7);
+  border-radius: 4px;
+  background: rgb(203, 234, 237);
+  transition: all 120ms ease-in-out;
+  color: rgb(87, 87, 87);
+  max-width: 50%;
+}
+.search:hover {
+  border: solid 1px #007bff82;
+  box-shadow: 0px 0px 9px 5px rgb(0 255 245 / 49%);
+}
+hr {
+  margin-bottom: 0;
+}
+.title {
+  font-weight: 600;
+  margin: 0 auto;
+  padding: 10px 5px 5px;
+  border: none;
+  text-align: center;
+}
+.title h1 {
+  margin-bottom: 0.5rem;
+}
+.title h5 {
+  font-size: 0.83em;
+}
+
+.current-weather {
+  margin: 10px 123px;
+  padding: 40px 0;
+  text-align: center;
+  border: 1px;
+  border-style: none solid;
+  border-radius: 25%;
+}
+.current-weather h3 {
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.current-weather h2 {
+  font-size: 4rem;
+  margin: 5px auto;
+}
+.current-weather h4 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 20px;
+}
+.row .bottom-info {
+  margin: 28px auto;
+  padding: 64px 0 0;
+}
+ul.extra-info {
+  list-style: none;
+  margin-bottom: 0;
+  font-size: 23px;
+  font-weight: 200;
+  line-height: 2;
+  margin-left: 50px;
+  padding-left: 45px;
+}
+.extra-info li {
+  font-size: 30px;
+}
+.btn-group {
+  position: relative;
+}
+ul.five-day-forecast {
+  list-style: none;
+  padding: 0 90px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 1%;
+}
+ul li.days-of-the-week {
+  margin: 32px auto;
+  border-radius: 10%;
+  border: solid 1px white;
+  padding: 18px 30px 0;
+  text-align: center;
+  transition: all 120ms ease-in-out;
+}
+ul li.days-of-the-week:hover {
+  background: transparent;
+  color: white;
+  border: solid 1px #007bff82;
+  box-shadow: 0px 0px 9px 5px rgb(0 255 245 / 49%);
+}
+.days-of-the-week h3 {
+  color: rgb(203, 234, 237);
+}
+.days-of-the-week p {
+  font-size: 25px;
+  font-weight: 500;
+}

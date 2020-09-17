@@ -18,12 +18,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="card">
         <div class="card-body">
           <div class="row mb-3">
             <div class="col-md-12 themed-grid-col">
-              <div class="pb-3">
+              <div class="interactive-header justify-content-center">
                 <form id="search-form">
                   <input
                     class="search col-md-7"
@@ -37,6 +37,13 @@
                     id="search-city-btn"
                   >
                     Search
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-sm"
+                    id="find-my-location"
+                  >
+                    Current
                   </button>
                   <div
                     class="btn-group btn-group-toggle"
@@ -63,16 +70,9 @@
                       ºC
                     </button>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-info btn-sm"
-                    id="find-my-location"
-                  >
-                    Current
-                  </button>
                 </form>
-                <hr />
               </div>
+              <hr />
               <div class="title">
                 <h1 id="location">Los Angeles</h1>
                 <h5 id="date">Monday Sept 14, 2020</h5>

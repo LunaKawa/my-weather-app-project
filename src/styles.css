@@ -3,20 +3,17 @@
 }
 
 .card {
-  margin: 0 auto 20px;
   background-image: linear-gradient(
     to top,
     #22e1ff 0%,
     #1d8fe1 48%,
     #625eb1 100%
   );
+  margin: 0 auto 20px;
   width: 70%;
   color: white;
 }
-.pb-3 {
-  padding-top: 0;
-  padding-left: 20px;
-}
+
 button {
   border: none;
   color: rgb(203, 234, 237);

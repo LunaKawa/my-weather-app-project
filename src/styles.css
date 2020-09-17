@@ -45,7 +45,7 @@ hr {
 }
 .title h1 {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: 30px;
 }
 .title h5 {
   font-size: 0.83em;
@@ -73,7 +73,7 @@ hr {
   font-weight: 200;
   margin-top: 20px;
 }
-.row .bottom-info {
+.additional-weather-characteristics {
   margin: 28px auto;
   padding: 64px 0 0;
 }

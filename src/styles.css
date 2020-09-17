@@ -13,7 +13,10 @@
   width: 70%;
   color: white;
 }
-
+.interactive-header {
+  display: block;
+  text-align: center;
+}
 button {
   border: none;
   color: rgb(203, 234, 237);
@@ -38,14 +41,14 @@ hr {
   margin: 0 auto;
   padding: 0px 5px 5px;
   border: none;
-  text-align: center;
+  text-align: left;
 }
 .title h1 {
   margin-bottom: 0.5rem;
-  font-size: 30px;
+  font-size: 23px;
 }
 .title h5 {
-  font-size: 0.83em;
+  font-size: 11px;
 }
 
 .current-weather {
@@ -70,7 +73,7 @@ hr {
   font-weight: 200;
   margin-top: 20px;
 }
-.additional-weather-characteristics {
+.additional-wthr-cha {
   margin: 28px auto;
   padding: 64px 0 0;
 }

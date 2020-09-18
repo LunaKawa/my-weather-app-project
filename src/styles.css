@@ -92,21 +92,19 @@ ul.extra-info {
 .btn-group {
   position: relative;
 }
-ul.five-day-forecast {
-  list-style: none;
-  padding: 0 90px;
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 1%;
+.fdforcast {
+  display: flex;
+  justify-content: space-between;
 }
-ul li.days-of-the-week {
+.days-of-the-week {
+  display: flex;
+  justify-content: space-between;
   margin: 10px 15px 0;
   border-radius: 10%;
   border: solid 1px white;
   padding: 5px 30px 1px;
   text-align: center;
   line-height: 1rem;
-  display: inline-block;
   transition: all 120ms ease-in-out;
 }
 ul li.days-of-the-week:hover {

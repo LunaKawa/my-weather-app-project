@@ -50,32 +50,20 @@ hr {
 .title h5 {
   font-size: 11px;
 }
-
-.current-weather {
-  margin: 5px 8px 50px 108px;
-  padding: 0;
+.current-weather div {
   text-align: center;
   border: 1px;
   border-style: none solid;
   border-radius: 25%;
 }
 .current-weather h3 {
-  font-size: 2.5rem;
   font-weight: 200;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin: 20px auto;
 }
 .current-weather h2 {
   font-size: 4rem;
   margin: 5px auto;
-}
-.current-weather h4 {
-  font-size: 2rem;
-  font-weight: 200;
-  margin-top: 20px;
-}
-.additional-wthr-cha {
-  margin: 28px auto;
-  padding: 64px 0 0;
 }
 ul.extra-info {
   list-style: none;
@@ -83,11 +71,9 @@ ul.extra-info {
   font-size: 20px;
   font-weight: 200;
   line-height: 2;
-  margin-left: 50px;
-  padding-left: 45px;
 }
 .extra-info li {
-  font-size: 26px;
+  font-size: 23px;
 }
 .btn-group {
   position: relative;

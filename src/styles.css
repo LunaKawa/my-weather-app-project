@@ -62,18 +62,15 @@ hr {
   margin: 20px auto;
 }
 .current-weather h2 {
-  font-size: 4rem;
+  font-size: 64px;
   margin: 5px auto;
 }
 ul.extra-info {
   list-style: none;
-  margin-bottom: 0;
   font-size: 20px;
   font-weight: 200;
   line-height: 2;
-}
-.extra-info li {
-  font-size: 23px;
+  margin: 20px auto;
 }
 .btn-group {
   position: relative;

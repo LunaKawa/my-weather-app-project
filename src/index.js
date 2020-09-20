@@ -25,6 +25,7 @@ function showPosition(position) {
   axios.get(apiUrl).then(Temperature);
 }
 function getCurrentPosition() {
+  debugger;
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 function formatDate(today) {

@@ -21,119 +21,101 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
+          <div class="interactive-header">
+            <form id="search-form">
+              <input
+                class="search col-md-6"
+                type="search"
+                placeholder="Search city"
+                id="search-bar-input"
+              />
+              <button
+                type="submit"
+                class="btn btn-outline-light btn-sm"
+                id="search-city-btn"
+              >
+                Search
+              </button>
+              <button
+                type="button"
+                class="btn btn-info btn-sm"
+                id="find-my-location"
+              >
+                Current
+              </button>
+              <span class="units"
+                ><a href="#" class="active" id="celsius-link"> °C</a> |
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
+            </form>
+          </div>
+          <hr />
           <div class="row">
-            <div class="col-md-12">
-              <div class="interactive-header">
-                <form id="search-form">
-                  <input
-                    class="search col-md-7"
-                    type="search"
-                    placeholder="Search city"
-                    id="search-bar-input"
-                  />
-                  <button
-                    type="submit"
-                    class="btn btn-outline-light btn-sm"
-                    id="search-city-btn"
-                  >
-                    Search
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-info btn-sm"
-                    id="find-my-location"
-                  >
-                    Current
-                  </button>
-                  <div
-                    class="btn-group btn-group-toggle"
-                    data-toggle="buttons"
-                    role="group"
-                    aria-label="Basic example"
-                  >
-                    <button
-                      type="button"
-                      class="btn btn-primary btn-sm"
-                      aria-pressed="false"
-                      autocomplete="off"
-                      id="fahrenheit"
-                    >
-                      ºF
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-primary btn-sm"
-                      aria-pressed="false"
-                      autocomplete="off"
-                      id="celsius"
-                    >
-                      ºC
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <hr />
-              <div class="title">
-                <h1 id="location">Los Angeles</h1>
-                <h5 id="date">Monday Sept 14, 2020</h5>
-                <h5 id="time">22:42</h5>
-              </div>
-              <div class="row display-console">
-                <div class="col current-weather">
+            <div class="col-8">
+              <div class="display-console">
+                <div class="title">
+                  <h1 id="location">Los Angeles</h1>
+                  <h5 id="date">Monday Sept 14, 2020</h5>
+                  <h5 id="time">22:42</h5>
+                </div>
+                <div class="current-weather">
                   <div>
                     <h3>Clear</h3>
                     <h2>☀️</h2>
                     <h3 id="currentTemp">75º</h3>
                   </div>
                 </div>
-                <div class="col additional-wthr-cha">
-                  <div>
-                    <div class="row">
-                      <div class="col description">
-                        <ul class="extra-info">
-                          <li>Wind 💨</li>
-                          <li>Humidity 💦</li>
-                          <li>UV Index ✨</li>
-                        </ul>
-                      </div>
-                      <div class="col figure">
-                        <ul class="extra-info">
-                          <li>5 mph</li>
-                          <li>41%</li>
-                          <li>High</li>
-                        </ul>
+                <div class="row">
+                  <div class="col additional-wthr-cha">
+                    <div>
+                      <div class="row">
+                        <div class="col description">
+                          <ul class="extra-info">
+                            <li>Wind 💨</li>
+                            <li>Humidity 💦</li>
+                            <li>UV Index ✨</li>
+                          </ul>
+                        </div>
+                        <div class="col figure">
+                          <ul class="extra-info">
+                            <li>5 mph</li>
+                            <li>41%</li>
+                            <li>High</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="fdforcast">
-              <!--five day forecast-->
-              <div class="days-of-the-week">
-                <h3>Mon</h3>
-                <h4>🌧</h4>
-                <p>65º</p>
-              </div>
-              <div class="days-of-the-week">
-                <h3>Tue</h3>
-                <h4>☀️</h4>
-                <p>80º</p>
-              </div>
-              <div class="days-of-the-week">
-                <h3>Wed</h3>
-                <h4>☀️</h4>
-                <p>85º</p>
-              </div>
-              <div class="days-of-the-week">
-                <h3>Thu</h3>
-                <h4>☁️</h4>
-                <p>75º</p>
-              </div>
-              <div class="days-of-the-week">
-                <h3>Fri</h3>
-                <h4>🌤</h4>
-                <p>68º</p>
+            <div class="col-4">
+              <div class="fdforecast">
+                <div class="days-of-the-week">
+                  <h3>Mon</h3>
+                  <h4>🌧</h4>
+                  <p>65º</p>
+                </div>
+                <div class="days-of-the-week">
+                  <h3>Tue</h3>
+                  <h4>☀️</h4>
+                  <p>80º</p>
+                </div>
+                <div class="days-of-the-week">
+                  <h3>Wed</h3>
+                  <h4>☀️</h4>
+                  <p>85º</p>
+                </div>
+                <div class="days-of-the-week">
+                  <h3>Thu</h3>
+                  <h4>☁️</h4>
+                  <p>75º</p>
+                </div>
+                <div class="days-of-the-week">
+                  <h3>Fri</h3>
+                  <h4>🌤</h4>
+                  <p>68º</p>
+                </div>
               </div>
             </div>
           </div>

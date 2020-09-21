@@ -16,6 +16,7 @@
 .interactive-header {
   display: block;
   text-align: center;
+  margin: 0 auto;
 }
 button {
   border: none;
@@ -27,7 +28,7 @@ button {
   background: rgb(203, 234, 237);
   transition: all 120ms ease-in-out;
   color: rgb(87, 87, 87);
-  max-width: 50%;
+  max-width: 40%;
 }
 .search:hover {
   border: solid 1px #007bff82;
@@ -36,12 +37,15 @@ button {
 hr {
   margin-bottom: 0;
 }
+.display-console {
+  padding-left: 10px;
+}
 .title {
   font-weight: 600;
   margin: 0 auto;
   padding: 0px 5px 5px;
   border: none;
-  text-align: left;
+  text-align: center;
 }
 .title h1 {
   margin-bottom: 0.5rem;
@@ -50,7 +54,7 @@ hr {
 .title h5 {
   font-size: 11px;
 }
-.current-weather div {
+.current-weather {
   text-align: center;
   border: 1px;
   border-style: none solid;
@@ -65,6 +69,13 @@ hr {
   font-size: 64px;
   margin: 5px auto;
 }
+.units {
+  font-size: 16px;
+  font-weight: 200;
+}
+.units a {
+  color: white;
+}
 ul.extra-info {
   list-style: none;
   font-size: 20px;
@@ -75,22 +86,20 @@ ul.extra-info {
 .btn-group {
   position: relative;
 }
-.fdforcast {
-  display: flex;
-  justify-content: space-between;
+.fdforecast {
+  align-items: center;
+  justify-content: center;
 }
 .days-of-the-week {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 15px 0;
-  border-radius: 10%;
+  margin: 0 70px 10px;
   border: solid 1px white;
+  border-radius: 10%;
   padding: 5px 30px 1px;
-  text-align: center;
   line-height: 1rem;
+  text-align: center;
   transition: all 120ms ease-in-out;
 }
-ul li.days-of-the-week:hover {
+.days-of-the-week:hover {
   background: transparent;
   color: white;
   border: solid 1px #007bff82;
@@ -98,8 +107,12 @@ ul li.days-of-the-week:hover {
 }
 .days-of-the-week h3 {
   color: rgb(203, 234, 237);
+  font-size: 16px;
+  margin-top: 5px;
+}
+.days-of-the-week h4 {
+  font-size: 12px;
 }
 .days-of-the-week p {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 16px;
 }

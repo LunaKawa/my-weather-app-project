@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather WireFrame</title>
-    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
     <script
       src="https://kit.fontawesome.com/0c6b87e885.js"
       crossorigin="anonymous"
@@ -41,7 +42,7 @@
                 class="btn btn-info btn-sm"
                 id="find-my-location"
               >
-                Current
+                <i class="fas fa-compass"></i>
               </button>
               <span class="units"
                 ><a href="#" class="active" id="celsius-link"> °C</a> |
@@ -60,20 +61,37 @@
                 </div>
                 <div class="current-weather">
                   <div>
-                    <h3>Clear</h3>
-                    <h2>☀️</h2>
+                    <h3>Clear Sky</h3>
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                      alt="sunny"
+                    />
                     <h3 id="currentTemp">75º</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col additional-wthr-cha">
+                    <div class="row">
+                      <div class="col">
+                        <p>Real Feel: <span>76º</span></p>
+                      </div>
+                      <div class="col">
+                        <p>High: <span>76º</span></p>
+                      </div>
+                      <div class="col">
+                        <p>Low: <span>76º</span></p>
+                      </div>
+                    </div>
                     <div>
                       <div class="row">
                         <div class="col description">
                           <ul class="extra-info">
-                            <li>Wind 💨</li>
-                            <li>Humidity 💦</li>
-                            <li>UV Index ✨</li>
+                            <li>Wind <i class="fas fa-wind"></i></li>
+                            <li>
+                              Humidity <i class="fas fa-cloud"></i
+                              ><i class="fas fa-percent"></i>
+                            </li>
+                            <li>Pressure <i class="fas fa-weight"></i></li>
                           </ul>
                         </div>
                         <div class="col figure">
@@ -93,27 +111,42 @@
               <div class="fdforecast">
                 <div class="days-of-the-week">
                   <h3>Mon</h3>
-                  <h4>🌧</h4>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                    alt="light rain"
+                  />
                   <p>65º</p>
                 </div>
                 <div class="days-of-the-week">
                   <h3>Tue</h3>
-                  <h4>☀️</h4>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                    alt="sunny"
+                  />
                   <p>80º</p>
                 </div>
                 <div class="days-of-the-week">
                   <h3>Wed</h3>
-                  <h4>☀️</h4>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                    alt="sunny"
+                  />
                   <p>85º</p>
                 </div>
                 <div class="days-of-the-week">
                   <h3>Thu</h3>
-                  <h4>☁️</h4>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                    alt="partly partly_cloudy"
+                  />
                   <p>75º</p>
                 </div>
                 <div class="days-of-the-week">
                   <h3>Fri</h3>
-                  <h4>🌤</h4>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png"
+                    alt="cloudy"
+                  />
                   <p>68º</p>
                 </div>
               </div>

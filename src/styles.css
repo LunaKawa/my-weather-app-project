@@ -61,6 +61,7 @@ button {
   font-weight: 200;
   font-size: 28px;
   margin: 20px auto;
+  text-transform: capitalize;
 }
 .more-temps {
   padding: 0 12px;
@@ -78,8 +79,7 @@ button {
   text-decoration: none;
   color: darkblue;
 }
-.units a 
-ul.extra-info {
+.units a ul.extra-info {
   list-style: none;
   font-size: 20px;
   font-weight: 200;

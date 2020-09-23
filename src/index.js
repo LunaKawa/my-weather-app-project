@@ -96,11 +96,9 @@ function displayPressure(response) {
 }
 function displayrealFeelTemp(response) {
   let realFeelTemp = Math.round(response.data.main.feels_like);
-  console.log(realFeelTemp);
   let realFeelElement = document.querySelector("#real-feel");
   realFeelElement.innerHTML = `${realFeelTemp}º F`;
 }
-
 function displayFahrenheit() {
   let temperature = document.querySelector("#currentTemp");
   temperature.innerHTML = `75º`;

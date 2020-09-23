@@ -79,7 +79,7 @@ button {
   text-decoration: none;
   color: darkblue;
 }
-.units a ul.extra-info {
+ul.extra-info {
   list-style: none;
   font-size: 20px;
   font-weight: 200;

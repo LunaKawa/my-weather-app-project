@@ -61,6 +61,10 @@ function showPosition(position) {
 function displayWeatherConditions(response) {
   displayTemp(response);
   displayWeatherDescription(response);
+  displayrealFeelTemp(response);
+  displayWind(response);
+  displayHumidity(response);
+  displayPressure(response);
 }
 function displayTemp(response) {
   let roundedTemp = Math.round(response.data.main.temp);
@@ -74,6 +78,27 @@ function displayWeatherDescription(response) {
   let description = response.data.weather[0].description;
   let weatherDescriptionHeader = document.querySelector("#description");
   weatherDescriptionHeader.innerHTML = description;
+}
+function displayWind(response) {
+  let windSpeed = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("#wind-speed");
+  windElement.innerHTML = `${windSpeed} mph`;
+}
+function displayHumidity(response) {
+  let humidity = response.data.main.humidity;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity} %`;
+}
+function displayPressure(response) {
+  let pressure = response.data.main.pressure;
+  let pressureElement = document.querySelector("#pressure");
+  pressureElement.innerHTML = `${pressure} hPa`;
+}
+function displayrealFeelTemp(response) {
+  let realFeelTemp = Math.round(response.data.main.feels_like);
+  console.log(realFeelTemp);
+  let realFeelElement = document.querySelector("#real-feel");
+  realFeelElement.innerHTML = `${realFeelTemp}º F`;
 }
 
 function displayFahrenheit() {

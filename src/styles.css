@@ -102,10 +102,14 @@ ul.extra-info {
 .days-of-the-week h3 {
   color: rgb(203, 234, 237);
   font-size: 16px;
-  margin-top: 5px;
+  margin: 0;
+}
+.days-of-the-week img {
+  margin: 5px;
 }
 .days-of-the-week p {
   font-size: 16px;
+  margin: 0;
 }
 .stats {
   padding-left: 50px;

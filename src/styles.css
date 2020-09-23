@@ -74,6 +74,10 @@ button {
 .units a {
   color: white;
 }
+.units a:hover {
+  text-decoration: none;
+  color: darkblue;
+}
 ul.extra-info {
   list-style: none;
   font-size: 20px;

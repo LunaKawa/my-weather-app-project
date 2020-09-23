@@ -29,7 +29,6 @@ function formatDate(today) {
   let currentDate = `${day} ${month} ${date}, ${year}`;
   let dateHeader = document.querySelector("#date");
   dateHeader.innerHTML = currentDate;
-  debugger;
   formatTime(today);
 }
 function formatTime(today) {
@@ -46,7 +45,7 @@ function searchCity(event) {
   let units = `imperial`;
   let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(Temperature);
+  axios.get(apiUrl).then(displayWeatherConditions);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
@@ -59,13 +58,22 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(Temperature);
 }
-function Temperature(response) {
+function displayWeatherConditions(response) {
+  displayTemp(response);
+  displayWeatherDescription(response);
+}
+function displayTemp(response) {
   let roundedTemp = Math.round(response.data.main.temp);
   let city = response.data.name;
   let h1 = document.querySelector("h1");
   let tempRightNow = document.querySelector("#currentTemp");
   h1.innerHTML = city;
   tempRightNow.innerHTML = `${roundedTemp}º F`;
+}
+function displayWeatherDescription(response) {
+  let description = response.data.weather[0].description;
+  let weatherDescriptionHeader = document.querySelector("#description");
+  weatherDescriptionHeader.innerHTML = description;
 }
 
 function displayFahrenheit() {

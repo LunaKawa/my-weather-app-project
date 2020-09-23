@@ -81,21 +81,20 @@ ul.extra-info {
   line-height: 2;
   margin: 20px auto;
 }
+.description {
+  display: block;
+  text-align: center;
+}
 .btn-group {
   position: relative;
 }
-.fdforecast {
-  align-items: center;
-  justify-content: center;
-}
 .days-of-the-week {
-  display: flex;
   text-align: center;
   justify-content: center;
-  margin: 0 32px 37px;
+  margin: 34px;
   border: solid 1px white;
   border-radius: 10%;
-  padding: 5px 30px 1px;
+  padding: 10px 20px;
   transition: all 120ms ease-in-out;
 }
 .days-of-the-week:hover {

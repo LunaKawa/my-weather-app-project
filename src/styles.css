@@ -10,7 +10,7 @@
     #625eb1 100%
   );
   margin: 0 auto 20px;
-  width: 70%;
+  width: 90%;
   color: white;
 }
 .interactive-header {
@@ -42,7 +42,7 @@ button {
   margin: 0 auto;
   padding: 0px 5px 5px;
   border: none;
-  text-align: center;
+  text-align: left;
 }
 .title h1 {
   margin-bottom: 0.5rem;
@@ -61,6 +61,11 @@ button {
   font-weight: 200;
   font-size: 28px;
   margin: 20px auto;
+}
+.more-temps {
+  padding: 0 12px;
+  text-align: center;
+  margin: 10px auto;
 }
 .units {
   font-size: 16px;
@@ -84,12 +89,13 @@ ul.extra-info {
   justify-content: center;
 }
 .days-of-the-week {
-  margin: 0 70px 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 0 32px 37px;
   border: solid 1px white;
   border-radius: 10%;
   padding: 5px 30px 1px;
-  line-height: 1rem;
-  text-align: center;
   transition: all 120ms ease-in-out;
 }
 .days-of-the-week:hover {

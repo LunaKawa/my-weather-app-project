@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather WireFrame</title>
+    <title>Weather App</title>
 
     <link
       rel="stylesheet"
@@ -22,37 +22,37 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-          <div class="interactive-header">
-            <form id="search-form">
-              <input
-                class="search col-md-6"
-                type="search"
-                placeholder="Search city"
-                id="search-bar-input"
-              />
-              <button
-                type="submit"
-                class="btn btn-outline-light btn-sm"
-                id="search-city-btn"
-              >
-                Search
-              </button>
-              <button
-                type="button"
-                class="btn btn-info btn-sm"
-                id="find-my-location"
-              >
-                <i class="fas fa-compass"></i>
-              </button>
-              <span class="units"
-                ><a href="#" class="active" id="celsius-link"> °C</a> |
-                <a href="#" id="fahrenheit-link">°F</a></span
-              >
-            </form>
-          </div>
-          <hr />
           <div class="row">
             <div class="col-8">
+              <div class="interactive-header">
+                <form id="search-form">
+                  <input
+                    class="search col-md-6"
+                    type="search"
+                    placeholder="Search city"
+                    id="search-bar-input"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-outline-light btn-sm"
+                    id="search-city-btn"
+                  >
+                    Search
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-sm"
+                    id="find-my-location"
+                  >
+                    <i class="fas fa-compass"></i>
+                  </button>
+                  <span class="units"
+                    ><a href="#" class="active" id="celsius-link"> °C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </form>
+              </div>
+              <hr />
               <div class="display-console">
                 <div class="title">
                   <h1 id="location">Los Angeles</h1>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="row">
                   <div class="col additional-wthr-cha">
-                    <div class="row">
+                    <div class="row more-temps">
                       <div class="col">
                         <p>Real Feel: <span>76º</span></p>
                       </div>
@@ -109,7 +109,7 @@
             </div>
             <div class="col-4">
               <div class="fdforecast">
-                <div class="days-of-the-week">
+                <div class="days-of-the-week d-flex align-items-center">
                   <h3>Mon</h3>
                   <img
                     src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
@@ -117,7 +117,7 @@
                   />
                   <p>65º</p>
                 </div>
-                <div class="days-of-the-week">
+                <div class="days-of-the-week d-flex align-items-center">
                   <h3>Tue</h3>
                   <img
                     src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
@@ -125,7 +125,7 @@
                   />
                   <p>80º</p>
                 </div>
-                <div class="days-of-the-week">
+                <div class="days-of-the-week d-flex align-items-center">
                   <h3>Wed</h3>
                   <img
                     src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
@@ -133,7 +133,7 @@
                   />
                   <p>85º</p>
                 </div>
-                <div class="days-of-the-week">
+                <div class="days-of-the-week d-flex align-items-center">
                   <h3>Thu</h3>
                   <img
                     src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
@@ -141,7 +141,7 @@
                   />
                   <p>75º</p>
                 </div>
-                <div class="days-of-the-week">
+                <div class="days-of-the-week d-flex align-items-center">
                   <h3>Fri</h3>
                   <img
                     src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png"

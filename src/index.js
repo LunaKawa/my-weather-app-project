@@ -1,33 +1,3 @@
-function Temperature(response) {
-  let roundedTemp = Math.round(response.data.main.temp);
-  let city = response.data.name;
-  let h1 = document.querySelector("h1");
-  let tempRightNow = document.querySelector("#currentTemp");
-  h1.innerHTML = city;
-  tempRightNow.innerHTML = `${roundedTemp}º F`;
-}
-
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-bar-input");
-  let city = searchInput.value;
-  let units = `imperial`;
-  let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(Temperature);
-}
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let units = `imperial`;
-  let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(Temperature);
-}
-function getCurrentPosition() {
-  debugger;
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
 function formatDate(today) {
   let days = [
     "Sunday",
@@ -59,8 +29,9 @@ function formatDate(today) {
   let currentDate = `${day} ${month} ${date}, ${year}`;
   let dateHeader = document.querySelector("#date");
   dateHeader.innerHTML = currentDate;
+  debugger;
+  formatTime(today);
 }
-//maybe I can put the time function inside the date function and it'll call the time function within the date function...
 function formatTime(today) {
   let timeHour = today.getHours();
   let timeMinutes = today.getMinutes();
@@ -68,6 +39,35 @@ function formatTime(today) {
   let timeHeader = document.querySelector("#time");
   timeHeader.innerHTML = currentTime;
 }
+function searchCity(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-bar-input");
+  let city = searchInput.value;
+  let units = `imperial`;
+  let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(Temperature);
+}
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let units = `imperial`;
+  let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(Temperature);
+}
+function Temperature(response) {
+  let roundedTemp = Math.round(response.data.main.temp);
+  let city = response.data.name;
+  let h1 = document.querySelector("h1");
+  let tempRightNow = document.querySelector("#currentTemp");
+  h1.innerHTML = city;
+  tempRightNow.innerHTML = `${roundedTemp}º F`;
+}
+
 function displayFahrenheit() {
   let temperature = document.querySelector("#currentTemp");
   temperature.innerHTML = `75º`;
@@ -79,7 +79,6 @@ function displayCelsius() {
 
 let today = new Date();
 formatDate(today);
-formatTime(today);
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", searchCity);

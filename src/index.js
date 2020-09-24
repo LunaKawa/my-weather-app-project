@@ -59,46 +59,28 @@ function showPosition(position) {
   axios.get(apiUrl).then(displayWeatherConditions);
 }
 function displayWeatherConditions(response) {
-  displayTemp(response);
-  displayWeatherDescription(response);
-  displayrealFeelTemp(response);
-  displayWind(response);
-  displayHumidity(response);
-  displayPressure(response);
-}
-function displayTemp(response) {
-  let roundedTemp = Math.round(response.data.main.temp);
-  let city = response.data.name;
+  console.log(response);
   let h1 = document.querySelector("h1");
   let tempRightNow = document.querySelector("#currentTemp");
-  h1.innerHTML = city;
-  tempRightNow.innerHTML = `${roundedTemp}º F`;
-}
-function displayWeatherDescription(response) {
-  let description = response.data.weather[0].description;
   let weatherDescriptionHeader = document.querySelector("#description");
-  weatherDescriptionHeader.innerHTML = description;
-}
-function displayWind(response) {
-  let windSpeed = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = `${windSpeed} mph`;
-}
-function displayHumidity(response) {
-  let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `${humidity} %`;
-}
-function displayPressure(response) {
-  let pressure = response.data.main.pressure;
   let pressureElement = document.querySelector("#pressure");
-  pressureElement.innerHTML = `${pressure} hPa`;
-}
-function displayrealFeelTemp(response) {
-  let realFeelTemp = Math.round(response.data.main.feels_like);
   let realFeelElement = document.querySelector("#real-feel");
-  realFeelElement.innerHTML = `${realFeelTemp}º F`;
+  let highTempElement = document.querySelector("#max");
+  let lowTempElement = document.querySelector("#min");
+
+  h1.innerHTML = response.data.name;
+  tempRightNow.innerHTML = Math.round(response.data.main.temp);
+  weatherDescriptionHeader.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  humidityElement.innerHTML = response.data.main.humidity;
+  pressureElement.innerHTML = response.data.main.pressure;
+  realFeelElement.innerHTML = Math.round(response.data.main.feels_like);
+  highTempElement.innerHTML = Math.round(response.data.main.temp_max);
+  lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
 }
+
 function displayFahrenheit() {
   let temperature = document.querySelector("#currentTemp");
   temperature.innerHTML = `75º`;

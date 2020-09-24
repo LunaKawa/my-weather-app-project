@@ -57,11 +57,16 @@ button {
   border-style: none solid;
   border-radius: 25%;
 }
-.current-weather h3 {
+#description {
   font-weight: 200;
   font-size: 28px;
-  margin: 20px auto;
+  margin: 20px auto 0;
+}
+#description:first-letter {
   text-transform: capitalize;
+}
+#today-wthr-img {
+  padding: 5px;
 }
 .more-temps {
   padding: 0 12px;

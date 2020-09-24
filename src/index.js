@@ -1,4 +1,4 @@
-function formatDate(today) {
+function formatDate() {
   let days = [
     "Sunday",
     "Monday",
@@ -29,14 +29,12 @@ function formatDate(today) {
   let currentDate = `${day} ${month} ${date}, ${year}`;
   let dateHeader = document.querySelector("#date");
   dateHeader.innerHTML = currentDate;
-  formatTime(today);
 }
-function formatTime(today) {
-  let timeHour = today.getHours();
-  let timeMinutes = today.getMinutes();
-  let currentTime = `${timeHour}:${timeMinutes}`;
-  let timeHeader = document.querySelector("#time");
-  timeHeader.innerHTML = currentTime;
+function formatTime(timestamp) {
+  let time = new Date(timestamp);
+  let hour = time.getHours();
+  let minutes = time.getMinutes();
+  return `${hour}:${minutes}`;
 }
 function searchCity(event) {
   event.preventDefault();
@@ -69,6 +67,8 @@ function displayWeatherConditions(response) {
   let realFeelElement = document.querySelector("#real-feel");
   let highTempElement = document.querySelector("#max");
   let lowTempElement = document.querySelector("#min");
+  //let date = document.querySelector("#date");
+  let time = document.querySelector("#time");
 
   h1.innerHTML = response.data.name;
   tempRightNow.innerHTML = Math.round(response.data.main.temp);
@@ -79,6 +79,8 @@ function displayWeatherConditions(response) {
   realFeelElement.innerHTML = Math.round(response.data.main.feels_like);
   highTempElement.innerHTML = Math.round(response.data.main.temp_max);
   lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
+  time.innerHTML = formatTime(response.data.dt * 1000);
+  //date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function displayFahrenheit() {

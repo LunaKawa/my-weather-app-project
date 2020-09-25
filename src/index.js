@@ -29,25 +29,18 @@ function formatTodaysDate(today) {
   let currentDate = `${day} ${month} ${date}, ${year}`;
   let dateHeader = document.querySelector("#date");
   dateHeader.innerHTML = currentDate;
-  formatTodaysCurrentTime(today);
 }
 function formatTodaysCurrentTime(today) {
   let hour = today.getHours();
-  let minutes = today.getMinutes();
-  let currentTime = document.querySelector("#time");
-  return (currentTime.innerHTML = `${hour}:${minutes}`);
-}
-function formatLastUpdateTime(timestamp) {
-  let time = new Date(timestamp);
-  let hour = time.getHours();
   if (hour < 10) {
-    hour = `0${hour}`;
+    hour = `0${minutes}`;
   }
-  let minutes = time.getMinutes();
+  let minutes = today.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${hour}:${minutes}`;
+  let timeHeader = document.querySelector("#time");
+  timeHeader.innerHTML = `${hour}:${minutes}`;
 }
 function searchCity(event) {
   event.preventDefault();
@@ -91,9 +84,20 @@ function displayWeatherConditions(response) {
   realFeelElement.innerHTML = Math.round(response.data.main.feels_like);
   highTempElement.innerHTML = Math.round(response.data.main.temp_max);
   lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
-  debugger;
   time.innerHTML = formatLastUpdateTime(response.data.dt * 1000);
   //date.innerHTML = formate(response.data.dt * 1000);
+}
+function formatLastUpdateTime(timestamp) {
+  let time = new Date(timestamp);
+  let hour = time.getHours();
+  if (hour < 10) {
+    hour = `0${minutes}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hour}:${minutes}`;
 }
 
 function displayFahrenheit() {
@@ -107,7 +111,7 @@ function displayCelsius() {
 
 let today = new Date();
 formatTodaysDate(today);
-getCurrentPosition();
+formatTodaysCurrentTime(today);
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", searchCity);

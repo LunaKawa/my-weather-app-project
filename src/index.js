@@ -40,7 +40,13 @@ function formatTodaysCurrentTime(today) {
 function formatLastUpdateTime(timestamp) {
   let time = new Date(timestamp);
   let hour = time.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   return `${hour}:${minutes}`;
 }
 function searchCity(event) {
@@ -101,6 +107,7 @@ function displayCelsius() {
 
 let today = new Date();
 formatTodaysDate(today);
+getCurrentPosition();
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", searchCity);

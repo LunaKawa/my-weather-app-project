@@ -92,8 +92,8 @@
                         </div>
                       </div>
                       <div>
-                        <div class="row">
-                          <div class="col stats">
+                        <div class="row stats">
+                          <div class="col">
                             <ul class="extra-info">
                               <li>Wind <i class="fas fa-wind"></i></li>
                               <li>
@@ -102,7 +102,7 @@
                               <li>Pressure <i class="fas fa-weight"></i></li>
                             </ul>
                           </div>
-                          <div class="col stats">
+                          <div class="col">
                             <ul class="extra-info">
                               <li><span id="wind-speed">5</span> mph</li>
                               <li><span id="humidity">41</span> %</li>
@@ -111,14 +111,14 @@
                           </div>
                         </div>
                       </div>
-                      <br />
-                      <p>
-                        Weather data last updated at
-                        <span id="latest-wthr-update">10:20</span>
-                      </p>
                     </div>
                   </div>
                 </div>
+                <br />
+                <footer>
+                  Weather data last updated at
+                  <span id="latest-wthr-update">10:20</span>
+                </footer>
               </div>
               <div class="col-4">
                 <div class="fdforecast">
@@ -157,7 +157,10 @@
                     />
                     <p>75º</p>
                   </div>
-                  <div class="days-of-the-week d-flex align-items-center">
+                  <div
+                    class="days-of-the-week d-flex align-items-center"
+                    id="last"
+                  >
                     <h3>Fri</h3>
                     <img
                       src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png"

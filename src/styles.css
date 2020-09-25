@@ -60,7 +60,7 @@ button {
 #description {
   font-weight: 200;
   font-size: 28px;
-  margin: 20px auto 0;
+  margin: 0 auto;
 }
 #description:first-letter {
   text-transform: capitalize;
@@ -86,7 +86,7 @@ button {
 }
 ul.extra-info {
   list-style: none;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 200;
   line-height: 2;
   margin: 0px auto;
@@ -112,6 +112,9 @@ ul.extra-info {
 #first {
   margin-top: 0;
 }
+#last {
+  margin-bottom: 0;
+}
 .days-of-the-week h3 {
   color: rgb(203, 234, 237);
   font-size: 16px;
@@ -125,9 +128,16 @@ ul.extra-info {
   margin: 0;
 }
 .stats {
-  padding-left: 50px;
-  padding-right: 0;
+  padding: 10px;
 }
 .current-weather div {
-  padding: 5px 0;
+  padding: 21px 0;
+}
+footer {
+  padding: 5px;
+}
+small {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }

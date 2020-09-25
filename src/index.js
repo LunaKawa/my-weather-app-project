@@ -63,7 +63,7 @@ function showPosition(position) {
   axios.get(apiUrl).then(displayWeatherConditions);
 }
 function displayWeatherConditions(response) {
-  let h1 = document.querySelector("h1");
+  let h1 = document.querySelector("#location");
   let tempRightNow = document.querySelector("#currentTemp");
   let weatherDescriptionHeader = document.querySelector("#description");
   let windElement = document.querySelector("#wind-speed");

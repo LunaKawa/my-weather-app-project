@@ -25,40 +25,47 @@
           <div class="card-body">
             <div class="row">
               <div class="col-8">
-                <div class="interactive-header">
-                  <form id="search-form">
-                    <input
-                      class="search col-md-6"
-                      type="search"
-                      placeholder="Search city"
-                      id="search-bar-input"
-                    />
-                    <button
-                      type="submit"
-                      class="btn btn-outline-light btn-sm"
-                      id="search-city-btn"
-                    >
-                      Search
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-info btn-sm"
-                      id="find-my-location"
-                    >
-                      <i class="fas fa-compass"></i>
-                    </button>
-                    <span class="units"
-                      ><a href="#" class="active" id="celsius"> °C</a> |
-                      <a href="#" id="fahrenheit">°F</a></span
-                    >
-                  </form>
-                </div>
-                <hr />
                 <div class="display-console">
-                  <div class="title">
-                    <h1 id="location">Los Angeles</h1>
-                    <h5 id="date">Monday Sept 14, 2020</h5>
-                    <h5 id="time">22:42</h5>
+                  <div class="clearfix">
+                    <div class="title">
+                      <div class="clearfix">
+                        <h1 class="float-left">
+                          <span id="location">Los Angeles</span>
+                          <span class="units float-right"
+                            ><a href="#" class="active" id="celsius"> °C</a> |
+                            <a href="#" id="fahrenheit">°F</a></span
+                          >
+                        </h1>
+                        <div
+                          class="interactive-header d-flex justify-content-end"
+                        >
+                          <form id="search-form">
+                            <input
+                              class="search col-md-6"
+                              type="search"
+                              placeholder="Search city"
+                              id="search-bar-input"
+                            />
+                            <button
+                              type="submit"
+                              class="btn btn-outline-light btn-sm"
+                              id="search-city-btn"
+                            >
+                              Search
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-info btn-sm"
+                              id="find-my-location"
+                            >
+                              <i class="fas fa-compass"></i>
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                      <h5 id="date">Monday Sept 14, 2020</h5>
+                      <h5 id="time">22:42</h5>
+                    </div>
                   </div>
                   <div class="current-weather">
                     <div>
@@ -71,7 +78,7 @@
                       <h3><span id="currentTemp">75</span>º</h3>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row d-flex justify-content-center">
                     <div class="col additional-wthr-cha">
                       <div class="row more-temps">
                         <div class="col">
@@ -104,13 +111,21 @@
                           </div>
                         </div>
                       </div>
+                      <br />
+                      <p>
+                        Weather data last updated at
+                        <span id="latest-wthr-update">10:20</span>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-4">
                 <div class="fdforecast">
-                  <div class="days-of-the-week d-flex align-items-center">
+                  <div
+                    class="days-of-the-week d-flex align-items-center"
+                    id="first"
+                  >
                     <h3>Mon</h3>
                     <img
                       src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
@@ -152,10 +167,6 @@
                   </div>
                 </div>
               </div>
-              <p>
-                Weather data last updated at
-                <span id="latest-wthr-update">10:20</span>
-              </p>
             </div>
           </div>
         </div>

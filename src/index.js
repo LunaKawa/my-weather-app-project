@@ -1,4 +1,4 @@
-function formatDate() {
+function formatTodaysDate(today) {
   let days = [
     "Sunday",
     "Monday",
@@ -29,8 +29,15 @@ function formatDate() {
   let currentDate = `${day} ${month} ${date}, ${year}`;
   let dateHeader = document.querySelector("#date");
   dateHeader.innerHTML = currentDate;
+  formatTodaysCurrentTime(today);
 }
-function formatTime(timestamp) {
+function formatTodaysCurrentTime(today) {
+  let hour = today.getHours();
+  let minutes = today.getMinutes();
+  let currentTime = document.querySelector("#time");
+  return (currentTime.innerHTML = `${hour}:${minutes}`);
+}
+function formatLastUpdateTime(timestamp) {
   let time = new Date(timestamp);
   let hour = time.getHours();
   let minutes = time.getMinutes();
@@ -57,7 +64,6 @@ function showPosition(position) {
   axios.get(apiUrl).then(displayWeatherConditions);
 }
 function displayWeatherConditions(response) {
-  console.log(response);
   let h1 = document.querySelector("h1");
   let tempRightNow = document.querySelector("#currentTemp");
   let weatherDescriptionHeader = document.querySelector("#description");
@@ -68,7 +74,7 @@ function displayWeatherConditions(response) {
   let highTempElement = document.querySelector("#max");
   let lowTempElement = document.querySelector("#min");
   //let date = document.querySelector("#date");
-  let time = document.querySelector("#time");
+  let time = document.querySelector("#latest-wthr-update");
 
   h1.innerHTML = response.data.name;
   tempRightNow.innerHTML = Math.round(response.data.main.temp);
@@ -79,8 +85,9 @@ function displayWeatherConditions(response) {
   realFeelElement.innerHTML = Math.round(response.data.main.feels_like);
   highTempElement.innerHTML = Math.round(response.data.main.temp_max);
   lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
-  time.innerHTML = formatTime(response.data.dt * 1000);
-  //date.innerHTML = formatDate(response.data.dt * 1000);
+  debugger;
+  time.innerHTML = formatLastUpdateTime(response.data.dt * 1000);
+  //date.innerHTML = formate(response.data.dt * 1000);
 }
 
 function displayFahrenheit() {
@@ -93,7 +100,7 @@ function displayCelsius() {
 }
 
 let today = new Date();
-formatDate(today);
+formatTodaysDate(today);
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", searchCity);

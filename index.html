@@ -20,134 +20,142 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-8">
-              <div class="interactive-header">
-                <form id="search-form">
-                  <input
-                    class="search col-md-6"
-                    type="search"
-                    placeholder="Search city"
-                    id="search-bar-input"
-                  />
-                  <button
-                    type="submit"
-                    class="btn btn-outline-light btn-sm"
-                    id="search-city-btn"
-                  >
-                    Search
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-info btn-sm"
-                    id="find-my-location"
-                  >
-                    <i class="fas fa-compass"></i>
-                  </button>
-                  <span class="units"
-                    ><a href="#" class="active" id="celsius"> °C</a> |
-                    <a href="#" id="fahrenheit">°F</a></span
-                  >
-                </form>
-              </div>
-              <hr />
-              <div class="display-console">
-                <div class="title">
-                  <h1 id="location">Los Angeles</h1>
-                  <h5 id="date">Monday Sept 14, 2020</h5>
-                  <h5>Last updated: <span id="time">22:42</span></h5>
+      <div class="wrapper">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <div class="interactive-header">
+                  <form id="search-form">
+                    <input
+                      class="search col-md-6"
+                      type="search"
+                      placeholder="Search city"
+                      id="search-bar-input"
+                    />
+                    <button
+                      type="submit"
+                      class="btn btn-outline-light btn-sm"
+                      id="search-city-btn"
+                    >
+                      Search
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-info btn-sm"
+                      id="find-my-location"
+                    >
+                      <i class="fas fa-compass"></i>
+                    </button>
+                    <span class="units"
+                      ><a href="#" class="active" id="celsius"> °C</a> |
+                      <a href="#" id="fahrenheit">°F</a></span
+                    >
+                  </form>
                 </div>
-                <div class="current-weather">
-                  <div>
-                    <h3 id="description">Clear sky</h3>
+                <hr />
+                <div class="display-console">
+                  <div class="title">
+                    <h1 id="location">Los Angeles</h1>
+                    <h5 id="date">Monday Sept 14, 2020</h5>
+                    <h5>Last updated: <span id="time">22:42</span></h5>
+                  </div>
+                  <div class="current-weather">
+                    <div>
+                      <h3 id="description">Clear sky</h3>
+                      <img
+                        id="today-wthr-img"
+                        src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                        alt="sunny"
+                      />
+                      <h3><span id="currentTemp">75</span>º</h3>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col additional-wthr-cha">
+                      <div class="row more-temps">
+                        <div class="col">
+                          <p>Real feel: <span id="real-feel">76</span>º</p>
+                        </div>
+                        <div class="col">
+                          <p>High: <span id="max">76</span>º</p>
+                        </div>
+                        <div class="col">
+                          <p>Low: <span id="min">76</span>º</p>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="row">
+                          <div class="col stats">
+                            <ul class="extra-info">
+                              <li>Wind <i class="fas fa-wind"></i></li>
+                              <li>
+                                Humidity <i class="fas fa-percentage"></i>
+                              </li>
+                              <li>Pressure <i class="fas fa-weight"></i></li>
+                            </ul>
+                          </div>
+                          <div class="col stats">
+                            <ul class="extra-info">
+                              <li><span id="wind-speed">5</span> mph</li>
+                              <li><span id="humidity">41</span> %</li>
+                              <li><span id="pressure">1012</span> hPa</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="fdforecast">
+                  <div class="days-of-the-week d-flex align-items-center">
+                    <h3>Mon</h3>
                     <img
-                      id="today-wthr-img"
+                      src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                      alt="light rain"
+                    />
+                    <p>65º</p>
+                  </div>
+                  <div class="days-of-the-week d-flex align-items-center">
+                    <h3>Tue</h3>
+                    <img
                       src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
                       alt="sunny"
                     />
-                    <h3><span id="currentTemp">75</span>º</h3>
+                    <p>80º</p>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col additional-wthr-cha">
-                    <div class="row more-temps">
-                      <div class="col">
-                        <p>Real feel: <span id="real-feel">76</span>º</p>
-                      </div>
-                      <div class="col">
-                        <p>High: <span id="max">76</span>º</p>
-                      </div>
-                      <div class="col">
-                        <p>Low: <span id="min">76</span>º</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col stats">
-                          <ul class="extra-info">
-                            <li>Wind <i class="fas fa-wind"></i></li>
-                            <li>Humidity <i class="fas fa-percentage"></i></li>
-                            <li>Pressure <i class="fas fa-weight"></i></li>
-                          </ul>
-                        </div>
-                        <div class="col stats">
-                          <ul class="extra-info">
-                            <li><span id="wind-speed">5</span> mph</li>
-                            <li><span id="humidity">41</span> %</li>
-                            <li><span id="pressure">1012</span> hPa</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="days-of-the-week d-flex align-items-center">
+                    <h3>Wed</h3>
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+                      alt="sunny"
+                    />
+                    <p>85º</p>
+                  </div>
+                  <div class="days-of-the-week d-flex align-items-center">
+                    <h3>Thu</h3>
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                      alt="partly partly_cloudy"
+                    />
+                    <p>75º</p>
+                  </div>
+                  <div class="days-of-the-week d-flex align-items-center">
+                    <h3>Fri</h3>
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png"
+                      alt="cloudy"
+                    />
+                    <p>68º</p>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-4">
-              <div class="fdforecast">
-                <div class="days-of-the-week d-flex align-items-center">
-                  <h3>Mon</h3>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                    alt="light rain"
-                  />
-                  <p>65º</p>
-                </div>
-                <div class="days-of-the-week d-flex align-items-center">
-                  <h3>Tue</h3>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                    alt="sunny"
-                  />
-                  <p>80º</p>
-                </div>
-                <div class="days-of-the-week d-flex align-items-center">
-                  <h3>Wed</h3>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                    alt="sunny"
-                  />
-                  <p>85º</p>
-                </div>
-                <div class="days-of-the-week d-flex align-items-center">
-                  <h3>Thu</h3>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                    alt="partly partly_cloudy"
-                  />
-                  <p>75º</p>
-                </div>
-                <div class="days-of-the-week d-flex align-items-center">
-                  <h3>Fri</h3>
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png"
-                    alt="cloudy"
-                  />
-                  <p>68º</p>
-                </div>
-              </div>
+              <p>
+                Weather data last updated:
+                <span id="latest-wthr-update">10:20</span>
+              </p>
             </div>
           </div>
         </div>

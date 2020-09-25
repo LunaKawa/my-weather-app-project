@@ -9,9 +9,11 @@
     #1d8fe1 48%,
     #625eb1 100%
   );
-  margin: 0 auto 20px;
+  margin: 20px auto;
   width: 90%;
   color: white;
+  border-radius: 1%;
+  box-shadow: 9px 11px 5px #0000000d;
 }
 .interactive-header {
   display: block;

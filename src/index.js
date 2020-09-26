@@ -42,10 +42,7 @@ function formatTodaysCurrentTime(today) {
   let timeHeader = document.querySelector("#time");
   timeHeader.innerHTML = `${hour}:${minutes}`;
 }
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-bar-input");
-  let city = searchInput.value;
+function searchCity(city) {
   let units = `imperial`;
   let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
@@ -63,7 +60,7 @@ function showPosition(position) {
   axios.get(apiUrl).then(displayWeatherConditions);
 }
 function displayWeatherConditions(response) {
-  let h1 = document.querySelector("#location");
+  let cityElement = document.querySelector("#location");
   let tempRightNow = document.querySelector("#currentTemp");
   let weatherDescriptionHeader = document.querySelector("#description");
   let windElement = document.querySelector("#wind-speed");
@@ -77,7 +74,7 @@ function displayWeatherConditions(response) {
   let todayIcon = document.querySelector("#today-wthr-icon");
   let openWeatherMapIcon = response.data.weather[0].icon;
 
-  h1.innerHTML = response.data.name;
+  cityElement.innerHTML = response.data.name;
   tempRightNow.innerHTML = Math.round(response.data.main.temp);
   weatherDescriptionHeader.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -115,13 +112,18 @@ function displayCelsius() {
   let temperature = document.querySelector("#currentTemp");
   temperature.innerHTML = `24º`;
 }
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-bar-input");
+  searchCity(cityInputElement.value);
+}
 
 let today = new Date();
 formatTodaysDate(today);
 formatTodaysCurrentTime(today);
 
 let search = document.querySelector("#search-form");
-search.addEventListener("submit", searchCity);
+search.addEventListener("submit", handleSubmit);
 
 let myLocation = document.querySelector("#find-my-location");
 myLocation.addEventListener("click", getCurrentPosition);
@@ -131,3 +133,4 @@ fTemp.addEventListener("click", displayFahrenheit);
 
 let cTemp = document.querySelector("#celsius");
 cTemp.addEventListener("click", displayCelsius);
+searchCity("Los Angeles");

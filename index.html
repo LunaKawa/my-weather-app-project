@@ -30,7 +30,7 @@
                     <div class="title">
                       <div class="clearfix">
                         <h1 class="float-left">
-                          <span id="location">Los Angeles</span>
+                          <span id="location"></span>
                           <span class="units float-right"
                             ><a href="#" class="active" id="celsius"> °C</a> |
                             <a href="#" id="fahrenheit">°F</a></span
@@ -45,6 +45,7 @@
                               type="search"
                               placeholder="Search city"
                               id="search-bar-input"
+                              autocomplete="off"
                             />
                             <button
                               type="submit"
@@ -69,12 +70,8 @@
                   </div>
                   <div class="current-weather">
                     <div>
-                      <h3 id="description">Clear sky</h3>
-                      <img
-                        id="today-wthr-icon"
-                        src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                        alt="sunny"
-                      />
+                      <h3 id="description"></h3>
+                      <img id="today-wthr-icon" src="" alt="" />
                       <h3><span id="currentTemp">75</span>º</h3>
                     </div>
                   </div>

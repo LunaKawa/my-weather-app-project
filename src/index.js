@@ -74,6 +74,8 @@ function displayWeatherConditions(response) {
   let lowTempElement = document.querySelector("#min");
   //let date = document.querySelector("#date");
   let time = document.querySelector("#latest-wthr-update");
+  let todayIcon = document.querySelector("#today-wthr-icon");
+  let openWeatherMapIcon = response.data.weather[0].icon;
 
   h1.innerHTML = response.data.name;
   tempRightNow.innerHTML = Math.round(response.data.main.temp);
@@ -85,6 +87,11 @@ function displayWeatherConditions(response) {
   highTempElement.innerHTML = Math.round(response.data.main.temp_max);
   lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
   time.innerHTML = formatLastUpdateTime(response.data.dt * 1000);
+  todayIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${openWeatherMapIcon}@2x.png`
+  );
+  todayIcon.setAttribute("alt", response.data.weather[0].description);
   //date.innerHTML = formate(response.data.dt * 1000);
 }
 function formatLastUpdateTime(timestamp) {

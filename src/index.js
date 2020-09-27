@@ -42,8 +42,13 @@ function formatTodaysCurrentTime(today) {
   let timeHeader = document.querySelector("#time");
   timeHeader.innerHTML = `${hour}:${minutes}`;
 }
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-bar-input");
+  searchCity(cityInputElement.value);
+}
 function searchCity(city) {
-  let units = `imperial`;
+  let units = `metric`;
   let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeatherConditions);
@@ -54,7 +59,7 @@ function getCurrentPosition() {
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let units = `imperial`;
+  let units = `metric`;
   let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeatherConditions);
@@ -73,6 +78,7 @@ function displayWeatherConditions(response) {
   let time = document.querySelector("#latest-wthr-update");
   let todayIcon = document.querySelector("#today-wthr-icon");
   let openWeatherMapIcon = response.data.weather[0].icon;
+  celsiusTemperature = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
   tempRightNow.innerHTML = Math.round(response.data.main.temp);
@@ -104,23 +110,23 @@ function formatLastUpdateTime(timestamp) {
   return `${hour}:${minutes}`;
 }
 
-function displayFahrenheit() {
-  let temperature = document.querySelector("#currentTemp");
-  temperature.innerHTML = `75º`;
-}
-function displayCelsius() {
-  let temperature = document.querySelector("#currentTemp");
-  temperature.innerHTML = `24º`;
-}
-function handleSubmit(event) {
+function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#search-bar-input");
-  searchCity(cityInputElement.value);
+  let temperatureElement = document.querySelector("#currentTemp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 let today = new Date();
-formatTodaysDate(today);
-formatTodaysCurrentTime(today);
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", handleSubmit);
@@ -128,9 +134,14 @@ search.addEventListener("submit", handleSubmit);
 let myLocation = document.querySelector("#find-my-location");
 myLocation.addEventListener("click", getCurrentPosition);
 
-let fTemp = document.querySelector("#fahrenheit");
-fTemp.addEventListener("click", displayFahrenheit);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
-let cTemp = document.querySelector("#celsius");
-cTemp.addEventListener("click", displayCelsius);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let celsiusTemperature = null;
+
+formatTodaysDate(today);
+formatTodaysCurrentTime(today);
 searchCity("Los Angeles");

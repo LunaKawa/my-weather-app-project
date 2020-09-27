@@ -31,9 +31,12 @@
                       <div class="clearfix">
                         <h1 class="float-left">
                           <span id="location"></span>
-                          <span class="units float-right"
-                            ><a href="#" class="active" id="celsius"> °C</a> |
-                            <a href="#" id="fahrenheit">°F</a></span
+                          <span class="units float-right">
+                            <a href="#" class="active" id="celsius-link"> °C</a>
+                            |
+                            <a href="#" class="inactive" id="fahrenheit-link"
+                              >°F</a
+                            ></span
                           >
                         </h1>
                         <div
@@ -72,7 +75,7 @@
                     <div>
                       <h3 id="description"></h3>
                       <img id="today-wthr-icon" src="" alt="" />
-                      <h3><span id="currentTemp">75</span>º</h3>
+                      <h3><span id="currentTemp"></span>º</h3>
                     </div>
                   </div>
                   <div class="row d-flex justify-content-center">
@@ -101,7 +104,7 @@
                           </div>
                           <div class="col">
                             <ul class="extra-info">
-                              <li><span id="wind-speed">5</span> mph</li>
+                              <li><span id="wind-speed">5</span> m/s</li>
                               <li><span id="humidity">41</span> %</li>
                               <li><span id="pressure">1012</span> hPa</li>
                             </ul>

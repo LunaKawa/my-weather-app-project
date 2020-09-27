@@ -144,3 +144,14 @@ small {
   text-align: center;
   margin: 0 auto;
 }
+.title .active {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+.title .active:hover {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}

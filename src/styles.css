@@ -81,7 +81,7 @@ button {
   font-weight: 200;
 }
 .units a {
-  color: white;
+  color: gray;
 }
 .units a:hover {
   text-decoration: none;
@@ -93,9 +93,6 @@ ul.extra-info {
   font-weight: 200;
   line-height: 2;
   margin: 0px auto;
-}
-.btn-group {
-  position: relative;
 }
 .days-of-the-week {
   text-align: center;

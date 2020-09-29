@@ -47,11 +47,29 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#search-bar-input");
   searchCity(cityInputElement.value);
 }
+function displayForecast(response) {
+  console.log(response.data.list[0].main.temp);
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = ` <div class="fdforecast" id="forecast">
+                  <div class="days-of-the-week">
+                    <h3>Mon</h3>
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
+                      alt="light rain"
+                    />
+                    <p>65º</p>
+                  </div>
+                </div>`;
+}
+
 function searchCity(city) {
   let units = `metric`;
   let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeatherConditions);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);

@@ -48,14 +48,14 @@ function handleSubmit(event) {
   searchCity(cityInputElement.value);
 }
 function displayForecast(response) {
-  console.log(response.data.list[0].weather[0]);
   let forecastElement = document.querySelector("#forecast");
-  let openWeatherMapIcon = response.data.list[0].weather[0].icon;
   forecastElement.innerHTML = `
    <div class="days-of-the-week d-flex align-items-center">
-      <h3>21:00</h3>
+      <h3>${formatTime(response.data.list[0].dt * 1000)}</h3>
       <img 
-        src="https://openweathermap.org/img/wn/${openWeatherMapIcon}@2x.png"
+        src="https://openweathermap.org/img/wn/${
+          response.data.list[0].weather[0].icon
+        }@2x.png"
         alt="${response.data.list[0].weather[0].description}"
       />
       <p>${Math.round(response.data.list[0].main.temp)}º</p>
@@ -108,7 +108,7 @@ function displayWeatherConditions(response) {
   realFeelElement.innerHTML = Math.round(response.data.main.feels_like);
   highTempElement.innerHTML = Math.round(response.data.main.temp_max);
   lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
-  time.innerHTML = formatLastUpdateTime(response.data.dt * 1000);
+  time.innerHTML = formatTime(response.data.dt * 1000);
   todayIcon.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${openWeatherMapIcon}@2x.png`
@@ -116,7 +116,7 @@ function displayWeatherConditions(response) {
   todayIcon.setAttribute("alt", response.data.weather[0].description);
   //date.innerHTML = formate(response.data.dt * 1000);
 }
-function formatLastUpdateTime(timestamp) {
+function formatTime(timestamp) {
   let time = new Date(timestamp);
   let hour = time.getHours();
   if (hour < 10) {

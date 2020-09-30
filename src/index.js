@@ -48,18 +48,19 @@ function handleSubmit(event) {
   searchCity(cityInputElement.value);
 }
 function displayForecast(response) {
-  console.log(response.data.list[0].main.temp);
+  console.log(response.data.list[0].weather[0]);
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = ` <div class="fdforecast" id="forecast">
-                  <div class="days-of-the-week">
-                    <h3>Mon</h3>
-                    <img
-                      src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png"
-                      alt="light rain"
-                    />
-                    <p>65º</p>
-                  </div>
-                </div>`;
+  let openWeatherMapIcon = response.data.list[0].weather[0].icon;
+  forecastElement.innerHTML = `
+   <div class="days-of-the-week d-flex align-items-center">
+      <h3>21:00</h3>
+      <img 
+        src="https://openweathermap.org/img/wn/${openWeatherMapIcon}@2x.png"
+        alt="${response.data.list[0].weather[0].description}"
+      />
+      <p>${Math.round(response.data.list[0].main.temp)}º</p>
+  </div>
+  `;
 }
 
 function searchCity(city) {
@@ -162,4 +163,5 @@ let celsiusTemperature = null;
 
 formatTodaysDate(today);
 formatTodaysCurrentTime(today);
+
 searchCity("Los Angeles");

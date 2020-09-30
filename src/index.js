@@ -30,18 +30,6 @@ function formatTodaysDate(today) {
   let dateHeader = document.querySelector("#date");
   dateHeader.innerHTML = currentDate;
 }
-function formatTodaysCurrentTime(today) {
-  let hour = today.getHours();
-  if (hour < 10) {
-    hour = `0${minutes}`;
-  }
-  let minutes = today.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let timeHeader = document.querySelector("#time");
-  timeHeader.innerHTML = `${hour}:${minutes}`;
-}
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#search-bar-input");
@@ -162,6 +150,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 let celsiusTemperature = null;
 
 formatTodaysDate(today);
-formatTodaysCurrentTime(today);
 
 searchCity("Los Angeles");

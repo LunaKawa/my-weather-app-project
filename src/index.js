@@ -37,18 +37,23 @@ function handleSubmit(event) {
 }
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
+  forecastElement.innerHTML = null;
+
+  for (let index = 0; index < 6; index++) {
+    let forecast = response.data.list[index];
+    forecastElement.innerHTML += `
    <div class="days-of-the-week d-flex align-items-center">
-      <h3>${formatTime(response.data.list[0].dt * 1000)}</h3>
+      <h3>${formatTime(forecast.dt * 1000)}</h3>
       <img 
         src="https://openweathermap.org/img/wn/${
-          response.data.list[0].weather[0].icon
+          forecast.weather[0].icon
         }@2x.png"
-        alt="${response.data.list[0].weather[0].description}"
+        alt="${forecast.weather[0].description}"
       />
-      <p>${Math.round(response.data.list[0].main.temp)}º</p>
+      <p>${Math.round(forecast.main.temp)}º</p>
   </div>
   `;
+  }
 }
 
 function searchCity(city) {
@@ -108,8 +113,9 @@ function formatTime(timestamp) {
   let time = new Date(timestamp);
   let hour = time.getHours();
   if (hour < 10) {
-    hour = `0${minutes}`;
+    hour = `0${hour}`;
   }
+
   let minutes = time.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;

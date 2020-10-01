@@ -71,8 +71,7 @@ button {
 #today-wthr-icon {
   display: block;
   margin: 0 auto;
-  height: 80px;
-  width: 80px;
+  width: 100px;
 }
 .more-temps {
   padding: 0 12px;
@@ -124,7 +123,7 @@ ul.extra-info {
   margin: 0;
 }
 .days-of-the-week img {
-  margin: 5px;
+  padding: 5px;
 }
 .days-of-the-week p {
   font-size: 16px;

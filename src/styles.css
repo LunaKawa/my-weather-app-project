@@ -154,3 +154,7 @@ small {
   text-decoration: none;
   cursor: default;
 }
+#forecast {
+  max-height: calc(100vh - 9rem);
+  overflow-y: auto;
+}

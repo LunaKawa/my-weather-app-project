@@ -104,7 +104,7 @@ ul.extra-info {
 }
 .days-of-the-week {
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
   margin: 34px;
   border: solid 1px white;
   border-radius: 10%;
@@ -130,6 +130,7 @@ ul.extra-info {
 }
 .days-of-the-week img {
   padding: 5px;
+  width: 80px;
 }
 .days-of-the-week p {
   font-size: 16px;
@@ -163,4 +164,5 @@ small {
 #forecast {
   max-height: calc(100vh - 9rem);
   overflow-y: auto;
+  margin: 0 30px;
 }

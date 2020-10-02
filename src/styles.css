@@ -44,7 +44,7 @@
   width: 10rem;
 }
 .display-console {
-  padding-left: 10px;
+  padding-left: 0 10px;
 }
 .title {
   font-weight: 600;
@@ -107,7 +107,7 @@ ul.extra-info {
   justify-content: space-around;
   margin: 34px;
   border: solid 1px white;
-  border-radius: 10%;
+  border-radius: 20px;
   padding: 10px;
   transition: all 120ms ease-in-out;
 }

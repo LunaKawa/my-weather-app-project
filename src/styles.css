@@ -18,7 +18,8 @@
 }
 .interactive-header {
   display: block;
-  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin: 0 auto;
 }
 button {
@@ -35,13 +36,13 @@ button {
   background-position: 5px 4px;
   padding-left: 30px;
   padding-right: 5px;
-  width: 30%;
+  width: 7rem;
   transition: all 0.4s ease-in-out;
 }
 .search:focus {
   border: solid 1px #007bff82;
   box-shadow: 0px 0px 9px 5px rgb(0 255 245 / 49%);
-  width: 100%;
+  width: 10rem;
 }
 .display-console {
   padding-left: 10px;
@@ -108,7 +109,7 @@ ul.extra-info {
   margin: 34px;
   border: solid 1px white;
   border-radius: 10%;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 0;
   transition: all 120ms ease-in-out;
 }
 .days-of-the-week:hover {

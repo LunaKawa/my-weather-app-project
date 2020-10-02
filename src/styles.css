@@ -149,6 +149,14 @@ small {
   display: block;
   text-align: center;
   margin: 0 auto;
+  padding-bottom: 15px;
+}
+#coder {
+  display: block;
+  text-align: left;
+  margin: 0 100px;
+  position: relative;
+  top: -10px;
 }
 .title .active {
   font-weight: bold;

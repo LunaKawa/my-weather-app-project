@@ -75,6 +75,9 @@ function showPosition(position) {
   let apiKey = `7a608a2c9f2ddbe4a22465f08c0c779a`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeatherConditions);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function displayWeatherConditions(response) {
   let cityElement = document.querySelector("#location");

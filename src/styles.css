@@ -18,13 +18,11 @@
 }
 .interactive-header {
   display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 0 auto;
+  padding: 5px 0;
+  margin: 5px auto;
 }
-button {
-  border: none;
-  color: rgb(203, 234, 237);
+#find-my-location {
+  margin: 0 3px;
 }
 .search {
   border: solid 1px rgba(100, 148, 202, 0.7);

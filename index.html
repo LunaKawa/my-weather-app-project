@@ -25,6 +25,24 @@
           <div class="card-body">
             <div class="row">
               <div class="col">
+                <div class="interactive-header">
+                  <form id="search-form">
+                    <button
+                      type="button"
+                      class="btn btn-info btn-sm"
+                      id="find-my-location"
+                    >
+                      <i class="fas fa-compass"></i>
+                    </button>
+                    <input
+                      class="search"
+                      type="search"
+                      placeholder="search"
+                      id="search-bar-input"
+                      autocomplete="off"
+                    />
+                  </form>
+                </div>
                 <div class="display-console">
                   <div class="clearfix">
                     <div class="title">
@@ -39,26 +57,6 @@
                             ></span
                           >
                         </h1>
-                        <div
-                          class="interactive-header d-flex justify-content-end"
-                        >
-                          <form id="search-form">
-                            <input
-                              class="search col-md-6"
-                              type="search"
-                              placeholder="Search city"
-                              id="search-bar-input"
-                              autocomplete="off"
-                            />
-                            <button
-                              type="button"
-                              class="btn btn-info btn-sm"
-                              id="find-my-location"
-                            >
-                              <i class="fas fa-compass"></i>
-                            </button>
-                          </form>
-                        </div>
                       </div>
                       <h5 id="date">Monday Sept 14, 2020</h5>
                     </div>
@@ -74,7 +72,7 @@
                     <div class="col additional-wthr-cha">
                       <div class="row more-temps">
                         <div class="col">
-                          <p>Real feel: <span id="real-feel">76</span>º</p>
+                          <p>Feels: <span id="real-feel">76</span>º</p>
                         </div>
                         <div class="col">
                           <p>High: <span id="max">76</span>º</p>

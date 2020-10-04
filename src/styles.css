@@ -95,15 +95,20 @@
   text-decoration: none;
   color: darkblue;
 }
-.details-wrapper {
+div.details-wrapper {
   display: inline-block;
 }
-ul.extra-info {
+div.data {
+  padding-left: 35px;
+}
+ul {
   list-style: none;
   font-size: 23px;
   font-weight: 200;
   line-height: 2;
+  text-align: left;
   margin: 0px auto;
+  padding: 0;
 }
 .days-of-the-week {
   text-align: center;
@@ -120,12 +125,6 @@ ul.extra-info {
   border: solid 1px #007bff82;
   box-shadow: 0px 0px 9px 5px rgb(0 255 245 / 49%);
 }
-#first {
-  margin-top: 0;
-}
-#last {
-  margin-bottom: 0;
-}
 .days-of-the-week h3 {
   color: rgb(203, 234, 237);
   font-size: 16px;
@@ -139,14 +138,12 @@ ul.extra-info {
   font-size: 16px;
   margin: 0;
 }
-.stats {
+.more-info {
   padding: 10px;
+  justify-content: center;
 }
 .current-weather div {
   padding: 21px 0;
-}
-footer {
-  padding: 5px;
 }
 small {
   display: block;

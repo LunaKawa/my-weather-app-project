@@ -95,6 +95,9 @@
   text-decoration: none;
   color: darkblue;
 }
+.details-wrapper {
+  display: inline-block;
+}
 ul.extra-info {
   list-style: none;
   font-size: 23px;

@@ -34,6 +34,27 @@
                     >
                       <i class="fas fa-map-marker-alt"></i>
                     </button>
+                    <div class="btn-group btn-group-sm" role="group">
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark temp active"
+                        data-toggle="button"
+                        aria-pressed="true"
+                        id="celsius-button"
+                      >
+                        °C
+                      </button>
+
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark temp"
+                        data-toggle="button"
+                        aria-pressed="false"
+                        id="fahrenheit-button"
+                      >
+                        °F
+                      </button>
+                    </div>
                     <input
                       class="search"
                       type="search"
@@ -44,22 +65,11 @@
                   </form>
                 </div>
                 <div class="display-console">
-                  <div class="clearfix">
-                    <div class="title">
-                      <div class="clearfix">
-                        <h1 class="float-left">
-                          <span id="location"></span>
-                          <span class="units float-right">
-                            <a href="#" class="active" id="celsius-link"> °C</a>
-                            |
-                            <a href="#" class="inactive" id="fahrenheit-link"
-                              >°F</a
-                            ></span
-                          >
-                        </h1>
-                      </div>
-                      <h5 id="date">Monday Sept 14, 2020</h5>
-                    </div>
+                  <div class="title">
+                    <h1>
+                      <span id="location"></span>
+                    </h1>
+                    <h5 id="date">Monday Sept 14, 2020</h5>
                   </div>
                   <div class="current-weather">
                     <div>

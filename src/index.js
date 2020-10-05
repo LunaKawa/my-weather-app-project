@@ -132,15 +132,15 @@ function displayFahrenheitTemp(event) {
   let temperatureElement = document.querySelector("#currentTemp");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  celsiusButton.classList.remove("active");
+  fahrenheitButton.classList.add("active");
 }
 function displayCelsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#currentTemp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  celsiusButton.classList.add("active");
+  fahrenheitButton.classList.remove("active");
 }
 
 let celsiusTemperature = null;
@@ -151,10 +151,10 @@ search.addEventListener("submit", handleSubmit);
 let myLocation = document.querySelector("#find-my-location");
 myLocation.addEventListener("click", getCurrentPosition);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+let fahrenheitButton = document.querySelector("#fahrenheit-button");
+fahrenheitButton.addEventListener("click", displayFahrenheitTemp);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
+let celsiusButton = document.querySelector("#celsius-button");
+celsiusButton.addEventListener("click", displayCelsiusTemp);
 
 searchCity("Los Angeles");
